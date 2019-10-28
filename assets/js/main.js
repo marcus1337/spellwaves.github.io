@@ -110,7 +110,8 @@
 								setTimeout(function() {
 									$body.removeClass('is-switching');
 								}, (initial ? 1000 : 0));
-
+                            
+                            
 							return;
 
 						}
