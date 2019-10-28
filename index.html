@@ -30,13 +30,13 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Description</a></li>
-								<li><a href="#goal">Goal</a></li>
-								<li><a href="#report">Report</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#insight">Insight</a></li>
-								<li><a href="#related">Related</a></li>
-								<li><a href="#testimony">Testimony</a></li>
+								<li><a href="#intro" onClick="hiderFoo();">Description</a></li>
+								<li><a href="#goal" onClick="hiderFoo();">Goal</a></li>
+								<li><a href="#report" onClick="hiderFoo();">Report</a></li>
+								<li><a href="#work" onClick="hiderFoo();">Work</a></li>
+								<li><a href="#insight" onClick="hiderFoo();">Insight</a></li>
+								<li><a href="#related" onClick="hiderFoo();">Related</a></li>
+								<li><a href="#testimony" onClick="hiderFoo();">Testimony</a></li>
 			
 							</ul>
 						</nav>
@@ -46,7 +46,7 @@
 					<div id="main">
 
 						<!-- Intro -->
-							<article id="intro">
+							<article id="intro" onunload="alert('banana')">
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="images/picintro.jpg" alt="" /></span>
 								<p>Spell-Waves is an interactive VR game that anyone can play regardless of age.
@@ -189,17 +189,52 @@
 						<p class="copyright">&copy; AGI19P1. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
-			<br>
-			<br>
-			<br>
+	
+			<br id="br1">
+			<br id="br2">
+			<br id="br3">
 
-			<header>
+			<header id="myHeader">
 			<h2>Demo Reel</h2>
 			</header>
 
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/MkQyRIodakk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe id="myFrame" width="560" height="315" src="https://www.youtube.com/embed/MkQyRIodakk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 			</div>
+
+			<script>
+
+			function hiderFoo(){
+					document.getElementById("myFrame").style.display = "none";
+					document.getElementById("myHeader").style.display = "none";
+					document.getElementById("br1").style.display = "none";
+					document.getElementById("br2").style.display = "none";
+					document.getElementById("br3").style.display = "none";
+			}
+
+			 function loadCheck(){
+			 	var iframe = document.getElementById("myFrame");
+				var custHead = document.getElementById("myHeader");
+
+				var pathArray = window.location.pathname.split('/');
+				var nowLoc = window.location.href;
+
+				if(nowLoc == "file:///C:/Users/Marcus/Desktop/skola2019/advanced_graphics/webstuff/spellwaves.github.io/index.html#"){
+					document.getElementById("myFrame").style.display = "block";
+					document.getElementById("myHeader").style.display = "block";
+					document.getElementById("br1").style.display = "block";
+					document.getElementById("br2").style.display = "block";
+					document.getElementById("br3").style.display = "block";
+				}
+			 }
+			 loadCheck();
+
+			</script>
+
+	
+
+
 
 		<!-- BG -->
 			<div id="bg"></div>
