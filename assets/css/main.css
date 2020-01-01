@@ -646,8 +646,8 @@ input, select, textarea {
 
 		.image:before {
 			pointer-events: none;
-			background-image: url("../../images/overlay.png");
-			background-color: rgba(19, 21, 25, 0.5);
+			/* background-image: url("../../images/overlay.png"); */
+			/* background-color: rgba(19, 21, 25, 0.5); */
 			border-radius: 4px;
 			content: '';
 			display: block;
@@ -1140,9 +1140,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1346,6 +1349,7 @@ input, select, textarea {
 
 			#header nav ul li {
 				padding-left: 0;
+				/* separating lines in nav */
 				border-left: solid 1px #ffffff;
 			}
 
@@ -1379,14 +1383,15 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			left: calc(50% - 1px);
-			width: 1px;
+			/* Removed middle line in nav */
+			width: 0px;
 			height: 100%;
 			background: #ffffff;
 		}
 
-		#header nav.use-middle ul li.is-middle {
+		/* #header nav.use-middle ul li.is-middle {
 			border-left: 0;
-		}
+		} */
 
 		body.is-article-visible #header {
 			-moz-transform: scale(0.95);
@@ -1663,17 +1668,74 @@ input, select, textarea {
 .team {
     padding: 0;
     margin: 0;
-    background-color: #ff00ff;
+	background-color: #ff00ff;
+	text-align: center;
 }
 
-.left-user {
-	margin: 0 65px;
-    display: inline-block;
-    float: left;
+.user-name {
+	font-size: large;
+	font-weight: bold;
 }
 
-.right-user {
-	margin: 0 65px;
-    display: inline-block;
-    float: left;
+.user {
+	/* margin: 0 65px; */
+	padding: 15px;
+	display: inline-block;
+	text-align: center;
+	float: left;
+	font-size: medium;
+}
+
+/* Gallery */
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 25%;
+	padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+	opacity: 0.8;
+	cursor: pointer;
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+}
+
+.column img:hover {
+	opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+	position: relative;
+	display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	color: white;
+	font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: white;
+	font-size: 35px;
+	cursor: pointer;
 }
